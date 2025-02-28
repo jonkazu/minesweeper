@@ -12,8 +12,6 @@ import random
 MS_SIZE = 25   # ゲーム盤のサイズ
 CLOSE, OPEN, FLAG = 0, 1, 2
 
-# ★今までに作成したコードからGameクラスをコピー★
-
 class Game:
     def __init__(self, number_of_mines = 200):
         """ ゲーム盤の初期化
@@ -78,7 +76,6 @@ class Game:
                    地雷セル，FLAGが設定されたセルは開けない．
           False -- 地雷があるセルを開けてしまった場合（ゲームオーバ）
         """
-        # <-- (STEP 4) ここにコードを追加
         if self.mine_map[y][x] == -1:
             return False
         elif self.game_board[y][x]==0:
@@ -182,7 +179,6 @@ class MinesweeperWindow(QMainWindow):
         self.resize(200, 200) 
         self.setWindowTitle('Minesweeper')
         
-        # ★以下，コードを追加★
         self.marks = ['x', ' ', 'P']
         self.hbox=[0 for i in range(MS_SIZE)]
         self.button = [[0 for i in range(MS_SIZE)] for j in range(MS_SIZE)]
